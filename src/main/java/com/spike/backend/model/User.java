@@ -10,15 +10,13 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class Book {
+public class User {
 
     private int id;
 
-    private String book_name;
+    private String name;
 
-    private String book_author;
+    private String pwd;
 
-    private String book_category;
-
-    private String book_publisher;
+    private int phone;
 }
