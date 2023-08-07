@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Book {
 
-    private int id;
+    private Integer id;
 
     private String book_name;
 

@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-    private int id;
+    private Integer id;
 
     private String name;
 
     private String pwd;
 
-    private int phone;
+    private Integer phone;
 }
