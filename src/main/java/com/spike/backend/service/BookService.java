@@ -5,6 +5,9 @@ import com.spike.backend.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 public class BookService {
 
@@ -19,7 +22,16 @@ public class BookService {
         }
     }
 
-    public int deleteById(Integer id){
-        return  bookMapper.deleteById(id);
+    public int deleteById(Integer id) {
+        return bookMapper.deleteById(id);
+    }
+
+    public Map<String, Object> findByPage(Integer pageSize, Integer pageNum,String bookName) {
+        pageNum = (pageNum - 1) * pageSize;
+        Map<String, Object> result = new HashMap<>();
+        bookName="%"+bookName+"%";
+        result.put("data", bookMapper.findByPage(pageNum, pageSize,bookName));
+        result.put("total", bookMapper.findTotal(bookName));
+        return result;
     }
 }

@@ -22,4 +22,7 @@
             id=#{id}
         </where>
     </update>
+    <select id="findByPage" resultType="com.spike.backend.model.Book">
+        select * from book where book_name LIKE #{bookName} limit #{pageSize}, #{pageNum}
+    </select>
 </mapper>

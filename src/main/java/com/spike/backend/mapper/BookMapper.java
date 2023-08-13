@@ -25,4 +25,10 @@ public interface BookMapper {
 
     @Update("UPDATE book set is_deleted = 1 where id = #{id}")
     int deleteById(Integer id);
+
+    List<Book> findByPage(Integer pageSize,Integer pageNum,String bookName);
+
+    @Select("SELECT count(*)  From book where book_name LIKE #{bookName} ")
+    Integer findTotal(String bookName);
+
 }
